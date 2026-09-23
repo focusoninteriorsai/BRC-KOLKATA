@@ -77,58 +77,51 @@
     }, 7000);
   }
 
-  /* Film player — still sequence until a real video is dropped in */
+  /* Film player — lazy-mounts the Google Drive embed on demand */
   const film = $("#film");
-  const filmSlides = $$(".film-still");
-  const playBtn = $("#film-play");
-  const range = $("#film-range");
-  const fsBtn = $("#film-fs");
-  const playIcon = $("#icon-play");
-  const pauseIcon = $("#icon-pause");
-  let playing = true;
-  let fIdx = 0;
-  let progress = 0;
-  const DURATION = 5000;
-  let last = performance.now();
+  const poster = $("#film-poster");
+  const player = $("#film-player");
+  const frame = $("#film-frame");
+  const launch = $("#film-launch");
+  const loading = $("#film-loading");
 
-  const setIcons = () => {
-    playIcon.style.display = playing ? "none" : "block";
-    pauseIcon.style.display = playing ? "block" : "none";
+  const VIDEO_FILE_ID = "1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y";
+  const VIDEO_EMBED = `https://drive.google.com/file/d/${VIDEO_FILE_ID}/preview`;
+
+  const startFilm = (e) => {
+    if (e && typeof e.preventDefault === "function") e.preventDefault();
+    if (frame.dataset.loaded) return;
+
+    /* Populate the src first so the frame can start buffering */
+    frame.src = VIDEO_EMBED;
+    frame.dataset.loaded = "1";
+    loading.classList.remove("hidden");
+    player.hidden = false;
+    player.setAttribute("aria-hidden", "false");
+    poster.setAttribute("aria-hidden", "true");
+    poster.hidden = true;
+
+    /* The poster holds the layout; swap when the iframe is ready */
+    frame.addEventListener("load", () => {
+      loading.classList.add("hidden");
+    });
   };
-  setIcons();
 
-  const showStill = (i) => {
-    filmSlides.forEach((img, n) => img.classList.toggle("is-on", n === i));
-  };
-
-  const loop = (now) => {
-    if (playing && filmSlides.length) {
-      progress += (now - last) / DURATION;
-      if (progress >= 1) {
-        progress = 0;
-        fIdx = (fIdx + 1) % filmSlides.length;
-        showStill(fIdx);
+  if (launch) launch.addEventListener("click", startFilm);
+  if (poster) {
+    poster.setAttribute("role", "button");
+    poster.setAttribute("tabindex", "0");
+    poster.setAttribute("aria-label", "Play the BRC Group project film");
+    poster.addEventListener("click", (e) => {
+      startFilm(e);
+    });
+    poster.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        startFilm();
       }
-      range.value = String(progress);
-    }
-    last = now;
-    requestAnimationFrame(loop);
-  };
-  requestAnimationFrame(loop);
-
-  playBtn.addEventListener("click", () => {
-    playing = !playing;
-    setIcons();
-  });
-
-  range.addEventListener("input", () => {
-    progress = Number(range.value);
-  });
-
-  fsBtn.addEventListener("click", async () => {
-    if (!document.fullscreenElement) await film.requestFullscreen?.();
-    else await document.exitFullscreen?.();
-  });
+    });
+  }
 
   /* Lightbox */
   const gallery = [
