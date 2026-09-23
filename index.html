@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
+    <!--════════════════════════════════════════════════════════════════════
+        🔗 MEDIA LINKS — YAHAN SE REPLACE KARO (ek hi jagah!)
+        Sabhi photo / video ki HYPERLINKS `js/main.js` ke bilkul TOP me
+        `SITE_MEDIA` object me hain. Wahan link badal do — poori site me
+        apne aap update ho jayega (gallery, hero, lightbox, video, client photo).
+        Neeche har jagah "🔁 REPLACE" comment bhi hai.
+    ════════════════════════════════════════════════════════════════════ -->
     <header class="nav" id="site-nav">
       <div class="wrap">
         <div class="nav-bar">
@@ -29,7 +36,6 @@
             <a href="#overview" data-go="overview">Overview</a>
             <a href="#executor" data-go="executor">Executed By</a>
             <a href="#client" data-go="client">Client</a>
-            <a href="#team" data-go="team">Team</a>
             <a href="#gallery" data-go="gallery">Gallery</a>
             <a href="#timeline" data-go="timeline">Timeline</a>
             <a href="#testimonial" data-go="testimonial">Testimonial</a>
@@ -51,7 +57,6 @@
           <a href="#overview" data-go="overview">Overview</a>
           <a href="#executor" data-go="executor">Executed By</a>
           <a href="#client" data-go="client">Client</a>
-          <a href="#team" data-go="team">Team</a>
           <a href="#gallery" data-go="gallery">Gallery</a>
           <a href="#timeline" data-go="timeline">Timeline</a>
           <a href="#testimonial" data-go="testimonial">Testimonial</a>
@@ -64,24 +69,25 @@
     <main>
       <!-- 1. HERO -->
       <section class="hero" id="hero">
-        <div class="hero-slides" aria-hidden="true">
-          <img class="is-on" src="./images/gallery/KRI_3180.jpg" alt="" />
-          <img src="./images/gallery/KRI_3128.jpg" alt="" loading="lazy" />
-          <img src="./images/gallery/KRI_3207.jpg" alt="" loading="lazy" />
-          <img src="./images/gallery/KRI_3118.jpg" alt="" loading="lazy" />
-          <img src="./images/gallery/KRI_3228.jpg" alt="" loading="lazy" />
+        <!-- 🔁 Hero photos: js/main.js → SITE_MEDIA.hero -->
+        <div class="hero-slides" id="hero-slides">
+          <img class="is-on" src="./images/gallery/KRI_3180.jpg" alt="BRC Group Kolkata office" title="Click to expand" />
+          <img src="./images/gallery/KRI_3128.jpg" alt="" loading="lazy" title="Click to expand" />
+          <img src="./images/gallery/KRI_3207.jpg" alt="" loading="lazy" title="Click to expand" />
+          <img src="./images/gallery/KRI_3118.jpg" alt="" loading="lazy" title="Click to expand" />
+          <img src="./images/gallery/KRI_3228.jpg" alt="" loading="lazy" title="Click to expand" />
         </div>
         <div class="hero-shade"></div>
         <div class="hero-noise"></div>
         <div class="hero-dust" aria-hidden="true">
-          <span style="width: 3px; height: 3px; left: 8%; top: 18%; opacity: 0.35; animation-delay: 0.2s"></span>
-          <span style="width: 2px; height: 2px; left: 22%; top: 42%; opacity: 0.28; animation-delay: 0.8s"></span>
-          <span style="width: 4px; height: 4px; left: 41%; top: 12%; opacity: 0.4; animation-delay: 1.2s"></span>
-          <span style="width: 2px; height: 2px; left: 63%; top: 28%; opacity: 0.25; animation-delay: 0.4s"></span>
-          <span style="width: 3px; height: 3px; left: 78%; top: 16%; opacity: 0.33; animation-delay: 1.6s"></span>
-          <span style="width: 2px; height: 2px; left: 88%; top: 48%; opacity: 0.22; animation-delay: 2s"></span>
-          <span style="width: 3px; height: 3px; left: 14%; top: 68%; opacity: 0.3; animation-delay: 0.6s"></span>
-          <span style="width: 2px; height: 2px; left: 52%; top: 72%; opacity: 0.26; animation-delay: 1.4s"></span>
+          <span style="width: 3px; height: 3px; left: 8%; top: 18%; opacity: 0.4; animation-delay: 0.2s"></span>
+          <span style="width: 2px; height: 2px; left: 22%; top: 42%; opacity: 0.32; animation-delay: 0.8s"></span>
+          <span style="width: 4px; height: 4px; left: 41%; top: 12%; opacity: 0.45; animation-delay: 1.2s"></span>
+          <span style="width: 2px; height: 2px; left: 63%; top: 28%; opacity: 0.3; animation-delay: 0.4s"></span>
+          <span style="width: 3px; height: 3px; left: 78%; top: 16%; opacity: 0.38; animation-delay: 1.6s"></span>
+          <span style="width: 2px; height: 2px; left: 88%; top: 48%; opacity: 0.26; animation-delay: 2s"></span>
+          <span style="width: 3px; height: 3px; left: 14%; top: 68%; opacity: 0.34; animation-delay: 0.6s"></span>
+          <span style="width: 2px; height: 2px; left: 52%; top: 72%; opacity: 0.3; animation-delay: 1.4s"></span>
         </div>
         <div class="hero-copy">
           <p class="eyebrow">A FocusOn Interiors Case Study · Kolkata, 2026</p>
@@ -213,53 +219,13 @@
         </div>
       </section>
 
-      <!-- 5. LEADERSHIP -->
-      <section class="section" id="team">
-        <div class="wrap">
-          <div class="section-head reveal">
-            <p class="eyebrow">04 — Leadership</p>
-            <h2 class="display">The people who ran the floor.</h2>
-          </div>
-          <div class="team-grid">
-            <article class="person card glass hover-lift reveal">
-              <div class="portrait">
-                <div class="placeholder">
-                  <span class="initials">AK</span>
-                </div>
-                <span class="add-flag">ADD CEO PHOTO</span>
-              </div>
-              <h3 class="display">Azim Khan</h3>
-              <p class="role">Chief Executive Officer · Project Lead</p>
-              <p>
-                CEO of FocusOn Interiors (appointed January 2025) after an eight-year tenure spanning
-                operations to executive leadership. Known for translating design intent into on-ground
-                delivery — people, process, performance. Has led prestigious workplace programmes for
-                organisations including Infosys, L&amp;T Finance and Luminous.
-              </p>
-            </article>
-            <article class="person card glass hover-lift reveal">
-              <div class="portrait">
-                <div class="placeholder">
-                  <span class="initials">RM</span>
-                </div>
-                <span class="add-flag">ADD PHOTO</span>
-              </div>
-              <h3 class="display">Raj Mishra</h3>
-              <p class="role">Project Manager</p>
-              <p>
-                On-site project manager for the BRC Group Kolkata fit-out — coordinating civil works,
-                interiors, vendors and the daily programme through to handover.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <!-- (FocusOn team ki photos hata di gayi hain — sirf client ki photo neeche testimonial me hai) -->
 
-      <!-- 6. PMC -->
+      <!-- 4. PMC -->
       <section class="section" id="pmc">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">05 — Project Management Consultant</p>
+            <p class="eyebrow">04 — Project Management Consultant</p>
             <h2 class="display">Node Urban Lab</h2>
           </div>
           <article class="card glass hover-lift reveal" style="margin-top: 2.2rem">
@@ -284,26 +250,32 @@
         </div>
       </section>
 
-      <!-- 7. GALLERY -->
+      <!-- 5. GALLERY -->
       <section class="section" id="gallery">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">06 — Media Gallery</p>
+            <p class="eyebrow">05 — Media Gallery</p>
             <h2 class="display">The finished floor.</h2>
             <p class="lede">
-              Press play to watch the official handover film, then explore the finished floor —
-              reception, lounge, cabins and workstations. Click any frame to open the lightbox.
+              Press play to watch the official project film on YouTube, then explore the finished floor —
+              reception, lounge, cabins and workstations. Click any photo to expand it.
             </p>
           </div>
 
+          <!-- 🔁 VIDEO: YouTube link yahan badlo → js/main.js → SITE_MEDIA.video (wapas yahin khulega) -->
           <div class="film reveal" id="film">
             <div class="film-poster" id="film-poster">
-              <img class="film-still" src="./images/gallery/KRI_3180.jpg" alt="BRC Group handover film — cover still" />
+              <img
+                class="film-still"
+                id="film-still"
+                src="https://i.ytimg.com/vi/7DvNoR_8eFk/maxresdefault.jpg"
+                alt="BRC Group × FocusOn Interiors — project film cover"
+              />
               <div class="film-shade"></div>
               <div class="film-vignette"></div>
               <p class="film-badge glass">
                 <span class="dot" aria-hidden="true"></span>
-                Project film · 4K UHD
+                Project film · YouTube
               </p>
               <div class="film-poster-copy">
                 <button class="film-launch" id="film-launch" aria-label="Play the project film">
@@ -313,9 +285,14 @@
                 </button>
                 <div class="film-titles">
                   <h3 class="display">BRC Group × FocusOn Interiors</h3>
-                  <p>The handover film — 4,200 sq.ft delivered on time.</p>
+                  <p>“Project BRC Group by FocusOn Interiors” — the handover film.</p>
                 </div>
               </div>
+              <button class="film-expand" id="film-expand" type="button" aria-label="Expand cover photo" title="Expand cover photo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                </svg>
+              </button>
             </div>
 
             <div class="film-player" id="film-player" aria-hidden="true" hidden>
@@ -327,9 +304,9 @@
                 id="film-frame"
                 title="BRC Group × FocusOn Interiors — Project Film"
                 src=""
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                allow="autoplay; fullscreen; encrypted-media; picture-in-picture; web-share"
                 allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerpolicy="strict-origin-when-cross-origin"
               ></iframe>
             </div>
           </div>
@@ -338,29 +315,21 @@
             <div class="film-meta-note">
               <span class="live-dot" aria-hidden="true"></span>
               <p>
-                <strong>Project film &nbsp;·&nbsp; “FOCUSON 4K WITH INTRO”</strong><br />
-                Streamed from Google Drive — hit play above, or grab the 4K original below.
+                <strong>Project film &nbsp;·&nbsp; “Project BRC Group by FocusOn Interiors”</strong><br />
+                Streaming from YouTube — press play above, or open it on YouTube.
               </p>
             </div>
             <div class="film-meta-actions">
-              <a
-                class="film-link ghost"
-                href="https://drive.google.com/file/d/1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y/view"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Watch on Drive
+              <!-- 🔁 YOUTUBE HYPERLINK — SITE_MEDIA.video se auto-update -->
+              <a class="film-link gold" id="link-youtube" href="https://youtu.be/7DvNoR_8eFk" target="_blank" rel="noreferrer">
+                Watch on YouTube
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M7 17L17 7M9 7h8v8" />
                 </svg>
               </a>
-              <a
-                class="film-link gold"
-                href="https://drive.google.com/uc?export=download&id=1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Download 4K
+              <!-- 🔁 4K FILE HYPERLINK — SITE_MEDIA.video4k se auto-update -->
+              <a class="film-link ghost" id="link-4k" href="https://drive.google.com/file/d/1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y/view" target="_blank" rel="noreferrer">
+                4K file (Drive)
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" />
                 </svg>
@@ -368,7 +337,8 @@
             </div>
           </div>
 
-          <div class="masonry">
+          <!-- 🔁 GALLERY PHOTOS: js/main.js → SITE_MEDIA.gallery (yeh block JS se refresh hota hai) -->
+          <div class="masonry" id="masonry">
             <button data-lb="0" type="button">
               <img src="./images/gallery/thumb-KRI_3128.jpg" alt="Reception desk with illuminated Om feature wall" loading="lazy" />
               <span class="cap">Reception</span>
@@ -413,11 +383,11 @@
         </div>
       </section>
 
-      <!-- 8. TIMELINE -->
+      <!-- 6. TIMELINE -->
       <section class="section" id="timeline">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">07 — Timeline</p>
+            <p class="eyebrow">06 — Timeline</p>
             <h2 class="display">From kick-off to handover.</h2>
           </div>
           <ol class="timeline">
@@ -450,22 +420,34 @@
         </div>
       </section>
 
-      <!-- 9. TESTIMONIAL -->
+      <!-- 7. TESTIMONIAL (sirf CLIENT ki photo — 🔁 SITE_MEDIA.clientPhoto) -->
       <section class="section" id="testimonial">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">08 — Client Voice</p>
+            <p class="eyebrow">07 — Client Voice</p>
             <h2 class="display">Appreciation from the CMD’s office.</h2>
           </div>
           <article class="quote-card glass-strong reveal">
             <span class="quote-mark" aria-hidden="true">“</span>
             <div class="quote-grid">
-              <div class="quote-photo">
-                <div class="placeholder" style="position: relative; height: 100%">
-                  <span class="initials" style="font-size: 2rem">AR</span>
-                  <span class="add-flag">ADD CLIENT PHOTO</span>
-                </div>
-              </div>
+              <!--
+                🔁 CLIENT PHOTO LINK — YAHAN APNI PHOTO KA LINK DAALO
+                js/main.js → SITE_MEDIA.clientPhoto me URL paste karo
+                (ya <img src="..."> yahin badal do). Click karne par expand hogi.
+              -->
+              <a
+                class="quote-photo photo-slot"
+                id="client-photo"
+                href="./images/clients/arun-kumar-rai.jpg"
+                data-cap="Mr. Arun Kumar Rai — CMD, BRC Group"
+                title="Click to expand"
+              >
+                <img id="client-photo-img" src="./images/clients/arun-kumar-rai.jpg" alt="Mr. Arun Kumar Rai — CMD, BRC Group" hidden />
+                <span class="placeholder" id="client-photo-ph">
+                  <span class="initials">AR</span>
+                  <span class="add-flag">🔗 Photo link — replace karo</span>
+                </span>
+              </a>
               <div>
                 <blockquote>
                   The client appreciated the timely completion, quality workmanship, and overall project
@@ -486,11 +468,11 @@
         </div>
       </section>
 
-      <!-- 10. CERTIFICATE -->
+      <!-- 8. CERTIFICATE -->
       <section class="section" id="certificate">
         <div class="wrap">
           <div class="section-head reveal">
-            <p class="eyebrow">09 — Completion</p>
+            <p class="eyebrow">08 — Completion</p>
             <h2 class="display">Certificate &amp; achievements.</h2>
             <p class="lede">
               The 4,200 sq.ft programme was handed over on 18 August 2026, within the agreed timeline.
@@ -498,8 +480,9 @@
             </p>
           </div>
           <div class="cert-grid">
+            <!-- 🔁 CERTIFICATE IMAGE — <div class="cert-slot"> ko <img src="images/certificates/..."> se badal do -->
             <article class="cert glass hover-lift reveal">
-              <div class="cert-slot">ADD CERTIFICATE IMAGE</div>
+              <div class="cert-slot">🔗 Add certificate image — link lagao</div>
               <div class="cert-meta">
                 <div>
                   <p class="eyebrow">Document</p>
@@ -509,7 +492,7 @@
               </div>
             </article>
             <article class="cert glass hover-lift reveal">
-              <div class="cert-slot">ADD CERTIFICATE IMAGE</div>
+              <div class="cert-slot">🔗 Add certificate image — link lagao</div>
               <div class="cert-meta">
                 <div>
                   <p class="eyebrow">Document</p>
@@ -523,11 +506,11 @@
       </section>
     </main>
 
-    <!-- 11. FOOTER CTA -->
+    <!-- 9. FOOTER CTA -->
     <footer class="section" id="contact">
       <div class="wrap">
         <div class="cta glass-strong reveal">
-          <p class="eyebrow">10 — Next brief</p>
+          <p class="eyebrow">09 — Next brief</p>
           <h2 class="display">Want a project like this for your company?</h2>
           <p>
             FocusOn Interiors designs and executes commercial interiors end-to-end — from the first
@@ -572,16 +555,28 @@
       </div>
     </footer>
 
+    <!-- LIGHTBOX — har photo click par expand -->
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
       <div class="lb-top">
-        <p class="eyebrow"><span id="lb-count">01 / 10</span> &nbsp; <span id="lb-cap" style="color: rgba(247,243,234,0.8); letter-spacing: 0; text-transform: none; font-family: Outfit, sans-serif"></span></p>
-        <button class="lb-close" id="lb-close" aria-label="Close lightbox">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 6l12 12M18 6L6 18" />
-          </svg>
-        </button>
+        <p class="eyebrow">
+          <span id="lb-count">01 / 10</span>
+          <span id="lb-cap" class="lb-cap"></span>
+        </p>
+        <div class="lb-top-actions">
+          <a class="lb-open" id="lb-open" href="#" target="_blank" rel="noreferrer">
+            Open full photo
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M7 17L17 7M9 7h8v8" />
+            </svg>
+          </a>
+          <button class="lb-close" id="lb-close" aria-label="Close lightbox">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="lb-stage">
+      <div class="lb-stage" id="lb-stage">
         <button class="lb-nav prev" id="lb-prev" aria-label="Previous image">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
             <path d="M15 6l-6 6 6 6" />
