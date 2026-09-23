@@ -18,7 +18,7 @@ images/gallery/     handover stills + thumbs
 images/logos/       FocusOn + BRC marks
 images/team/        drop portraits here
 images/certificates drop scans here
-videos/             drop project-film.mp4 here
+videos/             project film (streamed from Google Drive)
 favicon.png
 ```
 
@@ -34,9 +34,14 @@ Search the site for `ADD ` to find every placeholder.
 | Project Manager (Raj Mishra) | `images/team/raj-mishra.jpg` |
 | Client photo (Arun Kumar Rai) | `images/team/arun-kumar-rai.jpg` |
 | Completion certificate | `images/certificates/completion.jpg` |
-| Project video | `videos/project-film.mp4` |
+| Project video | Already embedded — plays in the gallery player via Google Drive (`drive.google.com/file/d/1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y/preview`). To swap the id, change `VIDEO_FILE_ID` in `js/main.js` and the two links in the film meta strip in `index.html`. |
 
-Drive source folder:  
+Drive source folder:
 https://drive.google.com/drive/folders/1UfAWR25g7xIDHZkekZg3PpZoS4sNc75F
 
-Until a video file is provided, the gallery player runs a cinematic Ken-Burns sequence of the handover stills, with custom play / seek / fullscreen controls.
+The gallery film player now embeds the real project film — "FOCUSON 4K WITH INTRO" —
+straight from Google Drive. On load it shows a cinematic poster; pressing play mounts
+the Drive player (lazy) so the 1.5 GB 4K film is only fetched on demand. Until the
+frame is ready a gold spinner shows, and Watch on Drive / Download 4K links sit under
+the player for the full-quality original.
+
