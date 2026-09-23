@@ -8,40 +8,43 @@ Open `index.html` in a browser, or enable GitHub Pages on this repository (sourc
 
 Programme: **1 May 2026 → 18 August 2026** (109 days / **16 weeks**), completed on time.
 
+Theme: **FocusOn bright** — cream/ivory paper, warm ink, FocusOn brand orange (#E7491C), gold hairlines.
+
 ## Files
 
 ```
 index.html          ← main homepage
-css/styles.css
-js/main.js
-images/gallery/     handover stills + thumbs
+css/styles.css      ← bright FocusOn theme
+js/main.js          ← 🔗 SITE_MEDIA (all media hyperlinks) + gallery/lightbox/video
+images/gallery/     project stills + thumbs (client's photos)
 images/logos/       FocusOn + BRC marks
-images/team/        drop portraits here
+images/clients/     drop client photos here
 images/certificates drop scans here
-videos/             project film (streamed from Google Drive)
+videos/             film info
 favicon.png
 ```
 
 No build step. No npm. No server.
 
-## Swap-in assets
+## 🔗 Replace photos / video (hyperlinks)
 
-Search the site for `ADD ` to find every placeholder.
+**Sab kuch ek hi jagah milega:** `js/main.js` ke **top** par `SITE_MEDIA` object.
 
-| Slot | Drop file at |
+| Cheez | Kahan replace karo |
 | --- | --- |
-| CEO photo (Azim Khan) | `images/team/azim-khan.jpg` then update the portrait in `index.html` |
-| Project Manager (Raj Mishra) | `images/team/raj-mishra.jpg` |
-| Client photo (Arun Kumar Rai) | `images/team/arun-kumar-rai.jpg` |
-| Completion certificate | `images/certificates/completion.jpg` |
-| Project video | Already embedded — plays in the gallery player via Google Drive (`drive.google.com/file/d/1OKRYQh_SsAHSd5LOtB4rT_0f4VkJlP8Y/preview`). To swap the id, change `VIDEO_FILE_ID` in `js/main.js` and the two links in the film meta strip in `index.html`. |
+| Project film (YouTube) | `SITE_MEDIA.video` — koi bhi YouTube format (youtu.be / watch / shorts) |
+| 4K file buttons (Drive) | `SITE_MEDIA.video4kView`, `SITE_MEDIA.video4kDownload` |
+| Client photo (CMD) | `SITE_MEDIA.clientPhoto` — local path ya direct URL |
+| Hero photos | `SITE_MEDIA.hero` array |
+| Gallery photos | `SITE_MEDIA.gallery` array (`thumb`, `full`, `cap`) |
 
-Drive source folder:
-https://drive.google.com/drive/folders/1UfAWR25g7xIDHZkekZg3PpZoS4sNc75F
+Link badalte hi **hero, gallery, lightbox aur video player** sab apne aap update ho jate hain.
 
-The gallery film player now embeds the real project film — "FOCUSON 4K WITH INTRO" —
-straight from Google Drive. On load it shows a cinematic poster; pressing play mounts
-the Drive player (lazy) so the 1.5 GB 4K film is only fetched on demand. Until the
-frame is ready a gold spinner shows, and Watch on Drive / Download 4K links sit under
-the player for the full-quality original.
+Current film: [PROJECT BRC GROUP BY FOCUSON INTERIORS PVT LTD](https://youtu.be/7DvNoR_8eFk)
 
+## Features
+
+- **YouTube film** in the gallery section (lazy-mounted, plays on click)
+- **Every photo is expandable** — hero, gallery, film cover and client photo open in a lightbox (prev/next, keyboard arrows, Esc, mobile swipe, "Open full photo" hyperlink)
+- **Bright FocusOn theme** (no dark mode)
+- **Client photos only** — FocusOn team photo section removed
